@@ -1,0 +1,15 @@
+AnchorPane
+{
+	-fx-background-color : #003C38;
+}
+
+Text
+{
+		-fx-fill : #19FF00;
+}
+
+Button
+{
+	-fx-border-color : #000000;
+	-fx-border-width: 3px;
+}
