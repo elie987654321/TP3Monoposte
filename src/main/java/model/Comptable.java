@@ -11,7 +11,8 @@ public class Comptable {
     private HashMap<String, ModeDePaiement> modePaiements;
 
     // Constructeur par défaut
-    public Comptable() {
+    public Comptable()
+    {
         this.totalDesDons = 0.00;
         this.modePaiements = new HashMap<String, ModeDePaiement>();
     }
@@ -40,9 +41,9 @@ public class Comptable {
 
     public void CreerModesPaiements()
     {
-        modePaiements.put("argent", ModeDePaiementCreateur.creerModeDePaiement( "Argent", 0));
+        modePaiements.put("argent", ModeDePaiementCreateur.creerModeDePaiement("Argent", 0));
         modePaiements.put("debit" , ModeDePaiementCreateur.creerModeDePaiement("Debit", 0.01));
-        modePaiements.put("credit", ModeDePaiementCreateur.creerModeDePaiement( "Credit", 0.03));
+        modePaiements.put("credit", ModeDePaiementCreateur.creerModeDePaiement("Credit", 0.03));
     }
 
     public void AjouterFactureATotalDon(Facture facture)
@@ -52,7 +53,8 @@ public class Comptable {
 
     public double CalculerDonFacture(Facture facture)
     {
-        if (facture.getTotalAvecTaxes() > 0){
+        if (facture.getTotalAvecTaxes() > 0)
+        {
             double caluclDon =  ModeDePaiement.POURCENTAGE * (facture.getTotalAvecTaxes() - (facture.getTotalAvecTaxes() *  facture.getModeDePaiement().getFrais()));
 
             DecimalFormat df = new DecimalFormat("#.##");
@@ -62,7 +64,9 @@ public class Comptable {
 
             return montantArrondi;
 
-        }else {
+        }
+        else
+        {
             return 0.00;
         }
     }

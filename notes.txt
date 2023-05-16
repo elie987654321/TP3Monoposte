@@ -1,0 +1,6 @@
+A faire
+
+Ajouter limite characteres a total sans taxes
+Ajouter datagrid view facture
+Faire test
+Fixer bug affichage avec debuggeur
