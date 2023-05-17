@@ -15,6 +15,7 @@ public class ApplicationController extends Application {
 
         Scene scene = new Scene(fxmlLoader1.load());
         primaryStage.setScene(scene);
+
         primaryStage.show();
     }
 }

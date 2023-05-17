@@ -2,11 +2,14 @@ package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import model.*;
 
 import javax.swing.*;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -35,6 +38,9 @@ public class ApplicationGraphicalController {
     //sert aussi de bouton annuler
     @FXML
     private Button valider;
+
+    @FXML
+    private Button liste;
 
     private boolean infosValidees;
 
@@ -113,6 +119,22 @@ public class ApplicationGraphicalController {
         else
         {
             textErreur.setVisible(true);
+        }
+  }
+
+  private void HandleButtonListe(ActionEvent event)  {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ListeFactures.fxml"));
+
+            Scene scene = new Scene(loader.load(), 620, 600);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+
+            stage.show();
+        }
+        catch(Exception e)
+        {
+            System.out.println("Erreur lors de l'ouverture de la liste de facture");
         }
   }
 
@@ -204,6 +226,7 @@ public class ApplicationGraphicalController {
 
         ajouter.setOnAction(this::HandleBoutonClickAjouter);
         valider.setOnAction(this::HandleButtonClickValider);
+        liste.setOnAction(this::HandleButtonListe);
 
         comptable.CreerModesPaiements();
         modesPaiementMap = comptable.getModePaiements();
