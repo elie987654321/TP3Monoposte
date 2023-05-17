@@ -15,6 +15,12 @@ public class ListeFacturesGraphicalController {
 
     ArrayList<Facture> listFactures;
 
+    @FXML
+    private TableView<Facture> tableFactures;
+
+    @FXML
+    private TableColumn
+
     //Initialization de l'Application
     @FXML
     public void initialize()
@@ -26,6 +32,13 @@ public class ListeFacturesGraphicalController {
     {
         this.listFactures = listFactures;
 
+        TableColumn colonneNom = new TableColumn<>("Nom");
+
+
         //TODO remplir la grille
+        for (Facture f : listFactures)
+        {
+
+        }
     }
 }

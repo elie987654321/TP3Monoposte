@@ -20,4 +20,10 @@ public class Argent implements ModeDePaiement  {
     public void setFrais(double frais) {
         this.frais = frais;
     }
+
+    @Override
+    public String getNom()
+    {
+        return "Argent";
+    }
 }

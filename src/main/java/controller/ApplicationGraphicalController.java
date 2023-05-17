@@ -8,8 +8,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.*;
 
-import javax.swing.*;
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -52,6 +51,8 @@ public class ApplicationGraphicalController {
     // On ajoute du text pour avoir la bonne taille, trop petit sinon
     private String textFixChoiceBox = "                               ";
 
+    private ArrayList<Facture> listeFactures = new ArrayList<Facture>();
+
     HashMap<String, ModeDePaiement> modesPaiementMap;
 
     //Appeller quand on pese sur le bouton valider(ou annuler)
@@ -92,7 +93,6 @@ public class ApplicationGraphicalController {
     //Ajoute le montant au total puis reinitialise les champs
     private void HandleBoutonClickAjouter(ActionEvent event)
     {
-
         Facture factureAEntrer = new Facture();
         if((nomAcheteur.getText() != "") && ChaineValide(totalSansTaxe.getText()) && ChaineValide(taxesApplicables.getText()) && (! modePaiement.getSelectionModel().isEmpty()))
         {
@@ -108,6 +108,8 @@ public class ApplicationGraphicalController {
             facture.setTotalAvecTaxes(Double.parseDouble(totalAvecTaxes.getText().replace(",", ".")));
             facture.setModeDePaiement(modesPaiementMap.get(stringAvantFix));
 
+            listeFactures.add(facture);
+
             comptable.AjouterFactureATotalDon(facture);
             totalDons.setText(comptable.getTotalDesDons() + "$");
             valider.setText("Valider");
@@ -115,6 +117,7 @@ public class ApplicationGraphicalController {
             infosValidees = false;
             resetAllValues();
             setInputEditable(true);
+
         }
         else
         {
@@ -127,6 +130,11 @@ public class ApplicationGraphicalController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ListeFactures.fxml"));
 
             Scene scene = new Scene(loader.load(), 620, 600);
+
+            ListeFacturesGraphicalController controller = loader.getController();
+
+            controller.FillGridFacture(listeFactures);
+
             Stage stage = new Stage();
             stage.setScene(scene);
 

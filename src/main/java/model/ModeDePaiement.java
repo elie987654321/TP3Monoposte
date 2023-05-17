@@ -9,4 +9,5 @@ public interface ModeDePaiement{
     public double getFrais();
     public void setFrais(double frais);
 
+    public String getNom();
 }
