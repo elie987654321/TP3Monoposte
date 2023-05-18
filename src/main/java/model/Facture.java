@@ -9,6 +9,8 @@ public class Facture {
     private double taxesApplicables;
     private double totalAvecTaxes;
 
+    private String nomModeDePaiement;
+
     // Constructeur par défaut
     public Facture(){
 
@@ -64,4 +66,8 @@ public class Facture {
         this.totalAvecTaxes = totalAvecTaxes;
     }
 
+    public String getNomModePaiement()
+    {
+        return modeDePaiement.getNom();
+    }
 }

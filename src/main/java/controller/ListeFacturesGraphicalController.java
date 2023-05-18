@@ -47,10 +47,10 @@ public class ListeFacturesGraphicalController {
         this.listFactures = listFactures;
 
         nom.setCellValueFactory(new PropertyValueFactory<>("nomDeLAcheteur"));
-        modePaiement.setCellValueFactory(new PropertyValueFactory<>("modePaiement"));
+        modePaiement.setCellValueFactory(new PropertyValueFactory<>("nomModePaiement"));
         totalSansTaxe.setCellValueFactory(new PropertyValueFactory<>("totalSansTaxes"));
         taxesApplicables.setCellValueFactory(new PropertyValueFactory<>("taxesApplicables"));
-        totalAvecTaxes.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.));
+        totalAvecTaxes.setCellValueFactory(new PropertyValueFactory<>("totalAvecTaxes"));
 
         for (Facture f : listFactures)
         {
