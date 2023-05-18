@@ -8,7 +8,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.*;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 

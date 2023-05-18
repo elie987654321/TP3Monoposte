@@ -1,8 +1,10 @@
 package controller;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import model.*;
 
@@ -19,7 +21,19 @@ public class ListeFacturesGraphicalController {
     private TableView<Facture> tableFactures;
 
     @FXML
-    private TableColumn
+    private TableColumn nom;
+
+    @FXML
+    private TableColumn modePaiement;
+
+    @FXML
+    private TableColumn totalSansTaxe;
+
+    @FXML
+    private TableColumn taxesApplicables;
+
+    @FXML
+    private TableColumn totalAvecTaxes;
 
     //Initialization de l'Application
     @FXML
@@ -32,13 +46,15 @@ public class ListeFacturesGraphicalController {
     {
         this.listFactures = listFactures;
 
-        TableColumn colonneNom = new TableColumn<>("Nom");
+        nom.setCellValueFactory(new PropertyValueFactory<>("nomDeLAcheteur"));
+        modePaiement.setCellValueFactory(new PropertyValueFactory<>("modePaiement"));
+        totalSansTaxe.setCellValueFactory(new PropertyValueFactory<>("totalSansTaxes"));
+        taxesApplicables.setCellValueFactory(new PropertyValueFactory<>("taxesApplicables"));
+        totalAvecTaxes.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.));
 
-
-        //TODO remplir la grille
         for (Facture f : listFactures)
         {
-
+            tableFactures.getItems().add(f);
         }
     }
 }

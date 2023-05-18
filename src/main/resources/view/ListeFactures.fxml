@@ -12,9 +12,9 @@
         <columns>
           <TableColumn fx:id="nom" prefWidth="124.79998779296875" text="Nom de l'acheteur" />
           <TableColumn fx:id="modePaiement" prefWidth="111.20001220703125" text="Mode de paiement" />
-            <TableColumn fx:id="totalSansTaxe" prefWidth="111.20001220703125" text="Total sans taxes" />
-            <TableColumn fx:id="taxesApplicables" prefWidth="111.20001220703125" text="Taxes Applicables" />
-            <TableColumn fx:id="totalAvecTaxes" prefWidth="111.20001220703125" text="Total avec taxes" />
+          <TableColumn fx:id="totalSansTaxe" prefWidth="111.20001220703125" text="Total sans taxes" />
+          <TableColumn fx:id="taxesApplicables" prefWidth="111.20001220703125" text="Taxes Applicables" />
+          <TableColumn fx:id="totalAvecTaxes" prefWidth="111.20001220703125" text="Total avec taxes" />
         </columns>
       </TableView>
       <Label layoutX="170.0" layoutY="20.0" prefHeight="55.0" prefWidth="261.0" text="Liste des factures">
