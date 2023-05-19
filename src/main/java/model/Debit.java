@@ -22,5 +22,5 @@ public class Debit implements ModeDePaiement {
     }
 
     @Override
-    public String getNom() {return "Argent";}
+    public String getNom() {return "Debit";}
 }
