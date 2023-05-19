@@ -64,6 +64,7 @@ public class ApplicationGraphicalController {
         {
             if((nomAcheteur.getText() != "") && ChaineValide(totalSansTaxe.getText()) && ChaineValide(taxesApplicables.getText()) && (! modePaiement.getSelectionModel().isEmpty()))
             {
+                textErreur.setVisible(false);
                 setInputEditable(false);
                 infosValidees = true;
                 valider.setText("annuler");
